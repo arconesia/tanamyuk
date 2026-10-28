@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Detail Tanaman - Hasil (Cabai Rawit #001)</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#F0FDF4',
+              100: '#DCFCE7',
+              500: '#22C55E',
+              600: '#16A34A',
+              700: '#15803D',
+              800: '#166534',
+              900: '#14532D',
+              primary: '#0B5A36'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="base-layout">
+    /* iOS frame mock & custom scrollbar hide */
+    body {
+      -webkit-tap-highlight-color: transparent;
+      background-color: #F3F4F6;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="flex justify-center min-h-screen p-0 text-slate-800 antialiased font-sans">
+<!-- BEGIN: MobileDeviceFrame -->
+<div class="w-full bg-[#F8FAF9] overflow-hidden flex flex-col relative min-h-screen" data-purpose="mobile-container">
+<!-- BEGIN: iOSStatusBar -->
+<header class="w-full pt-3 px-7 pb-2 flex justify-between items-center text-slate-900 select-none z-20 shrink-0" data-purpose="status-bar">
+<!-- iOS Clock -->
+<span class="text-[15px] font-semibold tracking-tight">9:41</span>
+<!-- Dynamic Island / Sensor Notch Placeholder -->
+<div class="w-24 h-4 bg-black rounded-full mx-auto -mt-1 hidden"></div>
+<!-- iOS Status Icons -->
+<div class="flex items-center space-x-1.5 text-slate-900">
+<!-- Cellular Signal -->
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.23C2.89 16.49 2 14.35 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10c0 2.35-.89 4.49-2.35 6.23l-.62-.62C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9zm0 4c-2.76 0-5 2.24-5 5 0 1.25.46 2.39 1.22 3.28l.71-.71C8.38 13.91 8 13 8 12c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1-.38 1.91-.93 2.57l.71.71C16.54 14.39 17 13.25 17 12c0-2.76-2.24-5-5-5zm0 3c-1.1 0-2 .9-2 2 0 .52.2 1 .53 1.36l.71-.71c-.15-.17-.24-.4-.24-.65 0-.55.45-1 1-1s1 .45 1 1c0 .25-.09.48-.24.65l.71.71c.33-.36.53-.84.53-1.36 0-1.1-.9-2-2-2z"></path>
+<path d="M2 20h20v2H2z" fill="none"></path>
+<path d="M3 18h2v3H3zm4-3h2v6H7zm4-3h2v9h-2zm4-3h2v12h-2zm4-4h2v16h-2z"></path>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0012 4zm0 2.5c3.73 0 7.15 1.42 9.77 3.76L12 19.12 2.23 10.26C4.85 7.92 8.27 6.5 12 6.5z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="flex items-center">
+<div class="w-5 h-2.5 border border-slate-900 rounded-[3px] p-0.5 flex items-center">
+<div class="h-full w-full bg-slate-900 rounded-[1px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-slate-900 rounded-r-sm ml-[0.5px]"></div>
+</div>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: NavigationBar -->
+<nav class="px-4 py-2.5 flex items-center justify-between border-b border-slate-100 bg-[#F8FAF9] shrink-0" data-purpose="top-navigation">
+<!-- Back Arrow -->
+<button aria-label="Kembali" class="w-8 h-8 flex items-center justify-center text-slate-700 hover:text-slate-900 active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="text-base font-bold text-slate-900 tracking-tight">Cabai Rawit #001</h1>
+<!-- Menu More Button -->
+<button aria-label="Menu Opsi" class="w-8 h-8 flex items-center justify-center text-slate-700 hover:text-slate-900 active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<circle cx="12" cy="5" r="1.75"></circle>
+<circle cx="12" cy="12" r="1.75"></circle>
+<circle cx="12" cy="19" r="1.75"></circle>
+</svg>
+</button>
+</nav>
+<!-- END: NavigationBar -->
+<!-- BEGIN: SubMenuTabs -->
+<!-- 5 sub-tab bar as shown in Screen 5 -->
+<div class="w-full bg-[#F8FAF9] px-3.5 py-2.5 shrink-0 border-b border-slate-100" data-purpose="tab-navigation">
+<div class="flex items-center justify-between gap-1 overflow-x-auto hide-scrollbar text-[12px] font-medium">
+<button class="px-2.5 py-1 text-slate-500 rounded-full hover:text-slate-700 transition-colors whitespace-nowrap">Hari Ini</button>
+<button class="px-2.5 py-1 text-slate-500 rounded-full hover:text-slate-700 transition-colors whitespace-nowrap">Perjalanan</button>
+<button class="px-2.5 py-1 text-slate-500 rounded-full hover:text-slate-700 transition-colors whitespace-nowrap">Masalah</button>
+<button class="px-2.5 py-1 text-slate-500 rounded-full hover:text-slate-700 transition-colors whitespace-nowrap">Catatan</button>
+<!-- Tab Aktif: Hasil -->
+<button class="px-3.5 py-1 bg-[#0A5636] text-white rounded-full font-semibold shadow-sm whitespace-nowrap">Hasil</button>
+</div>
+</div>
+<!-- END: SubMenuTabs -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 overflow-y-auto px-4 py-4 space-y-4 hide-scrollbar" data-purpose="main-screen-content">
+<!-- BEGIN: CycleSummarySection -->
+<section class="space-y-3" data-purpose="ringkasan-siklus">
+<h2 class="text-[14px] font-bold text-slate-900 tracking-tight">Ringkasan Siklus</h2>
+<!-- 2x2 Metric Cards Grid -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Card 1: Total Modal -->
+<div class="bg-white rounded-2xl p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-slate-100 flex items-start gap-2.5" data-purpose="metric-total-modal">
+<div class="w-8 h-8 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 text-slate-600">
+<!-- Wallet Icon -->
+<svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium leading-none mb-1">Total Modal</span>
+<span class="text-[13px] font-bold text-slate-900 leading-tight">Rp 475.000</span>
+</div>
+</div>
+<!-- Card 2: Total Panen -->
+<div class="bg-white rounded-2xl p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-slate-100 flex items-start gap-2.5" data-purpose="metric-total-panen">
+<div class="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
+<!-- Leaf / Plant Icon -->
+<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 19V6m0 0a6 6 0 016 6c0 4-6 7-6 7s-6-3-6-7a6 6 0 016-6z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium leading-none mb-1">Total Panen</span>
+<span class="text-[13px] font-bold text-slate-900 leading-tight">14 kg</span>
+</div>
+</div>
+<!-- Card 3: Penjualan -->
+<div class="bg-white rounded-2xl p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-slate-100 flex items-start gap-2.5" data-purpose="metric-penjualan">
+<div class="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
+<!-- Cash / Receipt Icon -->
+<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 3v4a1 1 0 001 1h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium leading-none mb-1">Penjualan</span>
+<span class="text-[13px] font-bold text-slate-900 leading-tight">Rp 436.000</span>
+</div>
+</div>
+<!-- Card 4: Hasil Sementara -->
+<div class="bg-white rounded-2xl p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-slate-100 flex items-start gap-2.5" data-purpose="metric-hasil-sementara">
+<div class="w-8 h-8 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center shrink-0">
+<!-- Percentage / Margin Icon -->
+<svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M7 17l10-10M9 9h.01M15 15h.01" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium leading-none mb-1">Hasil Sementara</span>
+<span class="text-[13px] font-bold text-rose-500 leading-tight">- Rp 39.000</span>
+</div>
+</div>
+</div>
+<!-- Detail Keuangan Button -->
+<button class="w-full mt-1.5 py-3 px-4 bg-white hover:bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center gap-2 shadow-[0_1px_2px_rgba(0,0,0,0.02)] active:scale-[0.99] transition-all" data-purpose="btn-detail-keuangan" type="button">
+<!-- Financial Chart Icon -->
+<svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[12px] font-semibold text-slate-800">Lihat Detail Keuangan</span>
+<svg class="w-3.5 h-3.5 text-slate-400 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</section>
+<!-- END: CycleSummarySection -->
+<!-- BEGIN: HarvestHistorySection -->
+<section class="space-y-2.5 pt-1" data-purpose="riwayat-panen">
+<!-- Section Header with Link -->
+<div class="flex items-center justify-between">
+<h2 class="text-[14px] font-bold text-slate-900 tracking-tight">Riwayat Panen</h2>
+<a class="text-[11px] font-semibold text-[#0B5A36] hover:underline flex items-center gap-0.5" href="#">
+            Lihat Semua
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</div>
+<!-- Harvest Item Card 1 -->
+<div class="w-full bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_1px_3px_rgba(0,0,0,0.03)] flex items-center justify-between" data-purpose="harvest-card">
+<div class="flex items-center gap-3">
+<!-- Crop Thumbnail (Cabai Merah) using provided snapshot image with crop -->
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-emerald-50 shrink-0 border border-slate-100 relative">
+<img alt="Thumbnail Cabai Merah" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByYfNy21xFiU7m2qt4DwcWelAwIKPqn9nOZgEgZ7i4OtOw9ARnBvQlt4RgcbAhs12e2aQwWrZsb2ws34zXR8Z-uejmmvpCAWODwBVKe7tP_Lc9Joy80mMBBvnkk6lXLpG5fUkJXPEJPtuA3pM12fnMXjOXzXEPaSTIBfqjIRjsMxCNtAJBrlumTBo3SQ1xR5b2MJti4_rsnJJ9x6t0PGBYolNMxQGeiXXJKWsiZTng1q1lQdUfsIWmXw">
+</div>
+<!-- Harvest Details -->
+<div class="flex flex-col">
+<span class="text-[13px] font-bold text-slate-900">Panen 1</span>
+<span class="text-[11px] text-slate-400 font-medium mt-0.5">12 Sep 2026</span>
+</div>
+</div>
+<!-- Harvest Quantity and Income -->
+<div class="flex flex-col items-end">
+<span class="text-[13px] font-bold text-slate-900">8 kg</span>
+<span class="text-[11px] text-slate-500 font-medium mt-0.5">Rp 248.000</span>
+</div>
+</div>
+</section>
+<!-- END: HarvestHistorySection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: iOSHomeIndicator -->
+<div class="w-full py-2 flex justify-center items-center shrink-0 bg-[#F8FAF9]" data-purpose="home-indicator">
+<div class="w-32 h-1 bg-slate-900/30 rounded-full"></div>
+</div>
+<!-- END: iOSHomeIndicator -->
+</div>
+<!-- END: MobileDeviceFrame -->
+
+
+</body></html>

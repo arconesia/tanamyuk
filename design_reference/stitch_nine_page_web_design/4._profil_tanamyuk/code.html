@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Profil - TanamYuk</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll">
+    /* Sembunyikan scrollbar untuk tampilan mobile rapi */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] min-h-screen text-slate-800 antialiased flex flex-col justify-between">
+<!-- BEGIN: PhoneContainer -->
+<!-- Container mensimulasikan layar iPhone iOS -->
+<main class="w-full min-h-screen bg-[#f8fafc] flex flex-col relative">
+<!-- BEGIN: iOSStatusBar -->
+<!-- Status bar standar iOS (9:41, sinyal, wifi, baterai) -->
+
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: ScreenHeader -->
+<!-- Header layar dengan judul 'Profil' dan menu 3 titik -->
+<section class="px-5 py-2.5 flex justify-between items-center bg-white border-b border-slate-100 shrink-0" data-purpose="screen-header">
+<h1 class="text-xl font-bold text-slate-800 tracking-tight">Profil</h1>
+<button aria-label="Menu opsi" class="p-1 rounded-full text-slate-600 hover:bg-slate-100 transition-colors">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+<path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+</svg>
+</button>
+</section>
+<!-- END: ScreenHeader -->
+<!-- BEGIN: ScrollableContent -->
+<!-- Konten utama yang dapat discroll -->
+<div class="flex-1 overflow-y-auto px-4 py-3 space-y-4">
+<!-- BEGIN: UserProfileCard -->
+<!-- Avatar, Nama, Email, dan Tombol Edit Profil -->
+<section class="flex items-center justify-between bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100/80" data-purpose="user-info">
+<div class="flex items-center space-x-3">
+<!-- Foto Profil Pengguna -->
+<img alt="Robbi" class="w-12 h-12 rounded-full object-cover ring-2 ring-emerald-500/20 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm8SUCB6AMbcvmYYB3z5BXqediS00vPC3rmGsWFtpdY8VSFxKjRyLcvy7c2tpYi3Ov53m_ofY6YbRRwrThmpU0tzaHIg_MrucbAkK80YcN2-heicRLhuNVL5GgvAUVH1yWw8D5lXRNg9QljNjtSCAtocoFOBuapsBz6bgUFev-QmriCysWjyPQwG0UkwRQECJxqtTHQ_KQ_wMTugHpj1HV4_vT3vHIehxAhueWaUBpfQeVB1L5cPeO8w">
+<div>
+<h2 class="font-bold text-slate-900 text-base leading-tight">Robbi</h2>
+<p class="text-xs text-slate-400 font-medium">robbi@email.com</p>
+</div>
+</div>
+<!-- Tombol Edit Profil -->
+<button class="px-3.5 py-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-full border border-emerald-200/60 transition-colors">
+          Edit Profil
+        </button>
+</section>
+<!-- END: UserProfileCard -->
+<!-- BEGIN: AchievementCards -->
+<!-- Status Pencapaian: Level, XP, Badge -->
+<section class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100/80" data-purpose="achievements-card">
+<div class="grid grid-cols-3 divide-x divide-slate-100 text-center">
+<!-- Level -->
+<div class="flex flex-col items-center justify-center px-1">
+<div class="flex items-center space-x-1.5 text-amber-500">
+<span class="text-base">🌱</span>
+<span class="text-xs font-bold text-slate-800">Level 4</span>
+</div>
+<span class="text-[10px] text-slate-400 mt-0.5 leading-tight font-medium">Petani Semangat</span>
+</div>
+<!-- XP -->
+<div class="flex flex-col items-center justify-center px-1">
+<div class="flex items-center space-x-1.5 text-orange-500">
+<span class="text-base">🔥</span>
+<span class="text-xs font-bold text-slate-800">1.280</span>
+</div>
+<span class="text-[10px] text-slate-400 mt-0.5 leading-tight font-medium">XP</span>
+</div>
+<!-- Badge -->
+<div class="flex flex-col items-center justify-center px-1">
+<div class="flex items-center space-x-1.5 text-yellow-500">
+<span class="text-base">🎖️</span>
+<span class="text-xs font-bold text-slate-800">5</span>
+</div>
+<span class="text-[10px] text-slate-400 mt-0.5 leading-tight font-medium">Badge</span>
+</div>
+</div>
+</section>
+<!-- END: AchievementCards -->
+<!-- BEGIN: KomoditasSayaSection -->
+<!-- Daftar komoditas tanaman aktif & tombol tambah -->
+<section class="space-y-2" data-purpose="komoditas-section">
+<div class="flex justify-between items-center px-1">
+<h3 class="text-xs font-bold text-slate-800 tracking-tight">Komoditas Saya</h3>
+<a class="text-[11px] font-semibold text-emerald-600 hover:text-emerald-700 flex items-center" href="#">
+            Lihat Semua <span class="ml-0.5 text-[9px]">&gt;</span>
+</a>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<!-- Item Cabai -->
+<div class="bg-white p-2.5 rounded-2xl border border-slate-100/90 shadow-sm flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1 filter drop-shadow-sm">🌶️</span>
+<span class="text-xs font-bold text-slate-800 leading-tight">Cabai</span>
+<span class="text-[9px] font-medium text-emerald-600 mt-0.5">Aktif</span>
+</div>
+<!-- Item Tomat -->
+<div class="bg-white p-2.5 rounded-2xl border border-slate-100/90 shadow-sm flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1 filter drop-shadow-sm">🍅</span>
+<span class="text-xs font-bold text-slate-800 leading-tight">Tomat</span>
+<span class="text-[9px] font-medium text-emerald-600 mt-0.5">Aktif</span>
+</div>
+<!-- Item Pakcoy -->
+<div class="bg-white p-2.5 rounded-2xl border border-slate-100/90 shadow-sm flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1 filter drop-shadow-sm">🥬</span>
+<span class="text-xs font-bold text-slate-800 leading-tight">Pakcoy</span>
+<span class="text-[9px] font-medium text-emerald-600 mt-0.5">Aktif</span>
+</div>
+<!-- Tombol Tambah Komoditas -->
+<button class="bg-white hover:bg-slate-50 border border-dashed border-slate-300 rounded-2xl p-2 flex flex-col items-center justify-center text-center transition-colors">
+<div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 mb-1">
+<span class="text-sm font-semibold leading-none">+</span>
+</div>
+<span class="text-[10px] font-semibold text-slate-600 leading-tight">Tambah Komoditas</span>
+</button>
+</div>
+</section>
+<!-- END: KomoditasSayaSection -->
+<!-- BEGIN: RiwayatBudidayaSection -->
+<!-- Riwayat panen terakhir -->
+<section class="space-y-2" data-purpose="riwayat-section">
+<div class="flex justify-between items-center px-1">
+<h3 class="text-xs font-bold text-slate-800 tracking-tight">Riwayat Budidaya</h3>
+<a class="text-[11px] font-semibold text-emerald-600 hover:text-emerald-700 flex items-center" href="#">
+            Lihat Semua <span class="ml-0.5 text-[9px]">&gt;</span>
+</a>
+</div>
+<!-- Kartu Riwayat Cabai Rawit -->
+<article class="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<img alt="Cabai Rawit" class="w-11 h-11 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEZUtTvkefQv0iO0Jk218gKpJXqTDa6TdMo59Jt0vZPgsoy9kmh1jHQ2PCo39196fD9RFqwz4l0lzhwt4zX2-m_OGWKWrB27AWXUt12ShOM8VuGqbEoKQstuRu9HTYni2iG-O8_IQHBad9Kc09tDiwtgDZR1-ooK0OnVPGAX2WupqiiFJNd0yq7g_fwznBlWGYzKDsW41rWyau2Jg4_srwK-MPCreXGqbOJJX4zoWG3exjpohPM4EoBQ">
+<div>
+<h4 class="text-xs font-bold text-slate-800 leading-tight">Cabai Rawit #001</h4>
+<p class="text-[10px] text-slate-400 font-medium mt-0.5">Panen • 12 Agu 2026</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-slate-800">25 kg</span>
+</div>
+</article>
+</section>
+<!-- END: RiwayatBudidayaSection -->
+<!-- BEGIN: SettingsMenu -->
+<!-- Daftar Pengaturan & Bantuan -->
+<section class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden divide-y divide-slate-50" data-purpose="settings-menu">
+<!-- Menu Notifikasi -->
+<a class="flex items-center justify-between p-3 hover:bg-slate-50/80 transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<div class="text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-slate-700">Pengaturan Notifikasi</span>
+</div>
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<!-- Menu Pusat Bantuan -->
+<a class="flex items-center justify-between p-3 hover:bg-slate-50/80 transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<div class="text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-slate-700">Pusat Bantuan</span>
+</div>
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<!-- Menu Tentang TanamYuk -->
+<a class="flex items-center justify-between p-3 hover:bg-slate-50/80 transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<div class="text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-slate-700">Tentang TanamYuk</span>
+</div>
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</section>
+<!-- END: SettingsMenu -->
+</div>
+<!-- END: ScrollableContent -->
+<!-- BEGIN: BottomNavigation -->
+<!-- Navigasi Bawah: Beranda, Tanaman Saya, Tantangan, Profil (Aktif) -->
+<nav class="w-full bg-white border-t border-slate-100 px-6 py-2 pb-5 flex justify-between items-center shrink-0" data-purpose="bottom-navigation">
+<!-- Tab 1: Beranda -->
+<a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium">Beranda</span>
+</a>
+<!-- Tab 2: Tanaman Saya -->
+<a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7zM9 9h6M9 13h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium leading-none">Tanaman Saya</span>
+</a>
+<!-- Tab 3: Tantangan -->
+<a class="flex flex-col items-center space-y-1 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium leading-none">Tantangan</span>
+</a>
+<!-- Tab 4: Profil (Active State: Hijau) -->
+<a class="flex flex-col items-center space-y-1 text-emerald-600" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" fill-rule="evenodd"></path>
+</svg>
+<span class="text-[10px] font-bold leading-none">Profil</span>
+</a>
+</nav>
+<!-- END: BottomNavigation -->
+</main>
+<!-- END: PhoneContainer -->
+
+
+</body></html>

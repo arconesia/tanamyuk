@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Detail Tanaman - Cabai Rawit #001</title>
+<!-- Tailwind CSS CDN with Forms & Container-Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#F0FDF4',
+              100: '#DCFCE7',
+              500: '#22C55E',
+              700: '#15803D',
+              800: '#166534',
+              900: '#14532D'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll-and-resets">
+    /* Sembunyikan scrollbar untuk pengalaman native mobile */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 flex justify-center items-center min-h-screen p-0 sm:p-4 text-slate-800 antialiased font-sans select-none">
+<!-- BEGIN: MobileContainer -->
+<!-- Container utama menyerupai perangkat iOS iPhone -->
+<main class="w-full max-w-[390px] h-[844px] bg-slate-50 flex flex-col shadow-2xl relative overflow-hidden sm:rounded-[44px] border-[6px] border-slate-900/10">
+<!-- BEGIN: iOSStatusBar -->
+<!-- Status bar standar iOS jam 9:41, sinyal, wifi, baterai -->
+<header class="w-full pt-3 px-7 pb-2 flex justify-between items-center bg-white shrink-0 z-30 select-none" data-purpose="status-bar">
+<span class="text-[15px] font-semibold tracking-tight text-slate-900">9:41</span>
+<div class="flex items-center space-x-2 text-slate-900">
+<!-- Cellular Signal Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 17 12">
+<rect height="3" rx="0.5" width="3" x="0" y="9"></rect>
+<rect height="6" rx="0.5" width="3" x="4.5" y="6"></rect>
+<rect height="9" rx="0.5" width="3" x="9" y="3"></rect>
+<rect height="12" rx="0.5" width="3" x="13.5" y="0"></rect>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 16 12">
+<path d="M8 2.8c2.4 0 4.6.9 6.2 2.5l1.4-1.4C13.6 1.8 10.9.8 8 .8S2.4 1.8.4 3.9l1.4 1.4C3.4 3.7 5.6 2.8 8 2.8zm0 4.3c1.3 0 2.5.5 3.4 1.4l1.4-1.4C11.5 5.8 9.8 5.1 8 5.1s-3.5.7-4.8 2l1.4 1.4c.9-.9 2.1-1.4 3.4-1.4zm0 4.3c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5-1.5.7-1.5 1.5.7 1.5 1.5 1.5z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-6 h-3 border border-slate-900 rounded-[4px] p-0.5 flex items-center">
+<div class="w-full h-full bg-slate-900 rounded-[1.5px]"></div>
+</div>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: TopNavigationBar -->
+<!-- Navigasi header detail: tombol back (<), judul, tombol menu tiga titik (⋮) -->
+<nav class="w-full px-4 py-2.5 bg-white flex justify-between items-center border-b border-slate-100 shrink-0 z-20" data-purpose="top-navigation">
+<button aria-label="Kembali" class="w-9 h-9 flex items-center justify-center -ml-1 text-slate-700 active:opacity-60 transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7"></path>
+</svg>
+</button>
+<h1 class="text-base font-bold text-slate-800 tracking-tight">Cabai Rawit #001</h1>
+<button aria-label="Opsi lainnya" class="w-9 h-9 flex items-center justify-center -mr-1 text-slate-600 active:opacity-60 transition">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<circle cx="12" cy="5" r="1.75"></circle>
+<circle cx="12" cy="12" r="1.75"></circle>
+<circle cx="12" cy="19" r="1.75"></circle>
+</svg>
+</button>
+</nav>
+<!-- END: TopNavigationBar -->
+<!-- BEGIN: SubNavigationTabs -->
+<!-- 5 menu navigasi horizontal sesuai spesifikasi -->
+<section class="w-full bg-white px-3 py-2 border-b border-slate-100 overflow-x-auto no-scrollbar shrink-0" data-purpose="sub-tabs">
+<div class="flex items-center space-x-1.5 min-w-max text-xs font-medium">
+<!-- Tab 1: Hari Ini (Aktif) -->
+<button class="bg-[#14532D] text-white px-3.5 py-1.5 rounded-full font-semibold shadow-sm transition">
+          Hari Ini
+        </button>
+<!-- Tab 2: Perjalanan -->
+<button class="text-slate-500 hover:text-slate-800 px-3 py-1.5 rounded-full transition">
+          Perjalanan
+        </button>
+<!-- Tab 3: Masalah -->
+<button class="text-slate-500 hover:text-slate-800 px-3 py-1.5 rounded-full transition">
+          Masalah
+        </button>
+<!-- Tab 4: Catatan -->
+<button class="text-slate-500 hover:text-slate-800 px-3 py-1.5 rounded-full transition">
+          Catatan
+        </button>
+<!-- Tab 5: Hasil -->
+<button class="text-slate-500 hover:text-slate-800 px-3 py-1.5 rounded-full transition">
+          Hasil
+        </button>
+</div>
+</section>
+<!-- END: SubNavigationTabs -->
+<!-- BEGIN: ScrollableContent -->
+<div class="flex-1 overflow-y-auto px-4 py-3 space-y-4 no-scrollbar" data-purpose="content-area">
+<!-- BEGIN: HeaderPlantCard -->
+<!-- Informasi ringkasan tanaman: foto, hari ke-38, fase perawatan, progress 38% -->
+<article class="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center space-x-3.5" data-purpose="plant-summary-card">
+<!-- Thumbnail Foto Cabai Rawit -->
+<div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-emerald-50 border border-slate-100 relative">
+<img alt="Tanaman Cabai Rawit Merah" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXQGabedxfOrmNkCuiHe4jsjGmkOIzVqs8oU69Hz2NVtw9GxxAJbnMrcS4DpPFqfjnTeGNd_4OAzGgbKs1sLHguugmnR3WvTip3qjOoXX3VTOvU0gzNUjQp_ovrfqvhWqiOY3_qxf-K5Pv_TgqHC6mAOi7-2H_UeiOfXJHXnhGBFSNNBS1LGla11lJ0g_-kb_WG92RmEBYFYE_8CzVOgTbfmmu9tt8vpEZG6jiCJWuQf807KZD94lu6A"/>
+</div>
+<!-- Detail Fase & Progress Bar -->
+<div class="flex-1 min-w-0 pr-1">
+<h2 class="text-base font-bold text-slate-900 leading-snug">Hari ke-38</h2>
+<p class="text-xs text-slate-500 mt-0.5">Fase Perawatan</p>
+<!-- Progress Bar & Persentase -->
+<div class="mt-3 flex items-center space-x-2.5">
+<div class="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-600 rounded-full" style="width: 38%;"></div>
+</div>
+<span class="text-xs font-bold text-slate-800 shrink-0">38%</span>
+</div>
+</div>
+</article>
+<!-- END: HeaderPlantCard -->
+<!-- BEGIN: TodayTasksSection -->
+<!-- Daftar Tugas Hari Ini (3) -->
+<section class="space-y-2.5" data-purpose="daily-tasks">
+<h3 class="text-sm font-bold text-slate-900 px-0.5">Tugas Hari Ini (3)</h3>
+<!-- Task Item 1: Siram tanaman -->
+<article class="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_2px_6px_rgba(0,0,0,0.03)] flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 shrink-0">
+<!-- Water drop icon -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+</svg>
+</div>
+<span class="text-[13px] font-semibold text-slate-800">Siram tanaman</span>
+</div>
+<div class="flex items-center space-x-3">
+<span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100/60">+10 XP</span>
+<input aria-label="Selesaikan tugas Siram tanaman" class="w-5 h-5 rounded-md border-slate-300 text-emerald-600 focus:ring-0 cursor-pointer" type="checkbox"/>
+</div>
+</article>
+<!-- Task Item 2: Periksa kondisi daun -->
+<article class="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_2px_6px_rgba(0,0,0,0.03)] flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0">
+<!-- Leaf icon -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.75V9c3.41-1.07 6.64-1.39 8-1z"></path>
+</svg>
+</div>
+<span class="text-[13px] font-semibold text-slate-800">Periksa kondisi daun</span>
+</div>
+<div class="flex items-center space-x-3">
+<span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100/60">+10 XP</span>
+<input aria-label="Selesaikan tugas Periksa kondisi daun" class="w-5 h-5 rounded-md border-slate-300 text-emerald-600 focus:ring-0 cursor-pointer" type="checkbox"/>
+</div>
+</article>
+<!-- Task Item 3: Berikan pupuk NPK -->
+<article class="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_2px_6px_rgba(0,0,0,0.03)] flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
+<!-- Fertilizer sack/bottle icon -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M19 8h-2V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v3H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zM9 5h6v3H9V5zm7 11h-2v2h-4v-2H8v-4h2v-2h4v2h2v4z"></path>
+</svg>
+</div>
+<span class="text-[13px] font-semibold text-slate-800">Berikan pupuk NPK</span>
+</div>
+<div class="flex items-center space-x-3">
+<span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100/60">+20 XP</span>
+<input aria-label="Selesaikan tugas Berikan pupuk NPK" class="w-5 h-5 rounded-md border-slate-300 text-emerald-600 focus:ring-0 cursor-pointer" type="checkbox"/>
+</div>
+</article>
+</section>
+<!-- END: TodayTasksSection -->
+</div>
+<!-- END: ScrollableContent -->
+<!-- BEGIN: BottomActionBar -->
+<!-- Tombol aksi: 'Tandai Selesai' (gaya disabled kapsul lebar) -->
+<footer class="w-full bg-white px-4 pt-3 pb-8 border-t border-slate-100 shrink-0" data-purpose="bottom-action">
+<button class="w-full py-3.5 bg-slate-200 text-slate-400 font-semibold text-sm rounded-full text-center cursor-not-allowed transition select-none" disabled="" type="button">
+        Tandai Selesai
+      </button>
+<!-- iOS Home Indicator -->
+<div class="w-32 h-1 bg-slate-300 rounded-full mx-auto mt-4"></div>
+</footer>
+<!-- END: BottomActionBar -->
+</main>
+<!-- END: MobileContainer -->
+</body></html>

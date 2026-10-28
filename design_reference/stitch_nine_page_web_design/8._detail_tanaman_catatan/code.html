@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Detail Tanaman - Catatan</title>
+<!-- Tailwind CSS CDN with forms & container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#00583E',
+              dark: '#004732',
+              light: '#EAF5F0',
+              accent: '#22C55E'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Mobile Device Preview & Component Detail -->
+<style data-purpose="custom-styling">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen text-slate-800 antialiased flex flex-col">
+<!-- BEGIN: MobileDeviceFrame -->
+<main class="w-full min-h-screen bg-white flex flex-col relative" data-purpose="mobile-container">
+<!-- BEGIN: iOSStatusBar -->
+<header class="w-full px-7 pt-3.5 pb-2 flex justify-between items-center bg-white z-20 select-none">
+<!-- Time display -->
+<span class="text-sm font-semibold tracking-tight text-slate-900">9:41</span>
+<!-- iOS Icons: Cellular, Wi-Fi, Battery -->
+<div class="flex items-center space-x-1.5 text-slate-900">
+<!-- Signal strength icon -->
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.23C3.5 16.5 3 14.32 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9c0 2.32-.5 4.5-1.35 6.23l-.62-.62C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z" opacity="0.3"></path>
+<path d="M18.36 19.36L12 13l-6.36 6.36C7.38 20.89 9.58 21.8 12 21.8s4.62-.91 6.36-2.44z" opacity="0.2"></path>
+<rect height="5" rx="1" width="3" x="2" y="16"></rect>
+<rect height="9" rx="1" width="3" x="7" y="12"></rect>
+<rect height="13" rx="1" width="3" x="12" y="8"></rect>
+<rect height="17" rx="1" width="3" x="17" y="4"></rect>
+</svg>
+<!-- Wi-Fi icon -->
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.78 0 7.21 1.5 9.71 3.96L12 19.16 2.29 11.46C4.79 8.96 8.22 7.5 12 7.5z"></path>
+</svg>
+<!-- Battery icon -->
+<div class="w-5 h-2.5 border border-slate-900 rounded-[3px] p-0.5 flex items-center">
+<div class="w-full h-full bg-slate-900 rounded-sm"></div>
+</div>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: TopBarNavigation -->
+<nav class="px-4 py-2 flex items-center justify-between bg-white border-b border-gray-100" data-purpose="top-navigation">
+<!-- Back button -->
+<button aria-label="Kembali" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95 text-slate-700" type="button">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<!-- Screen title -->
+<h1 class="text-base font-bold text-slate-900 tracking-tight">Cabai Rawit #001</h1>
+<!-- Menu options button -->
+<button aria-label="Menu Lainnya" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 transition active:scale-95 text-slate-700" type="button">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<circle cx="12" cy="5" r="1.75"></circle>
+<circle cx="12" cy="12" r="1.75"></circle>
+<circle cx="12" cy="19" r="1.75"></circle>
+</svg>
+</button>
+</nav>
+<!-- END: TopBarNavigation -->
+<!-- BEGIN: SubNavigationTabs -->
+<!-- 5 Horizontal Sub Tabs -->
+<section class="px-4 py-3 bg-white" data-purpose="sub-tab-navigation">
+<div class="flex items-center space-x-1.5 overflow-x-auto hide-scrollbar text-xs">
+<button class="px-3.5 py-1.5 rounded-full text-slate-500 font-medium whitespace-nowrap hover:bg-slate-100 transition" type="button">Hari ini</button>
+<button class="px-3.5 py-1.5 rounded-full text-slate-500 font-medium whitespace-nowrap hover:bg-slate-100 transition" type="button">Perjalanan</button>
+<button class="px-3.5 py-1.5 rounded-full text-slate-500 font-medium whitespace-nowrap hover:bg-slate-100 transition" type="button">Masalah</button>
+<!-- Active Tab: Catatan -->
+<button class="px-3.5 py-1.5 rounded-full bg-[#00583E] text-white font-semibold whitespace-nowrap shadow-sm" type="button">Catatan</button>
+<button class="px-3.5 py-1.5 rounded-full text-slate-500 font-medium whitespace-nowrap hover:bg-slate-100 transition" type="button">Hasil</button>
+</div>
+</section>
+<!-- END: SubNavigationTabs -->
+<!-- BEGIN: MainContentArea -->
+<div class="flex-1 px-4 py-3 overflow-y-auto space-y-4" data-purpose="form-content">
+<!-- BEGIN: UploadPhotoSection -->
+<!-- Foto & Perkembangan Upload Box -->
+<section class="w-full bg-[#F7FAF9] border-2 border-dashed border-[#B8DCD0] rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-50/40 transition active:scale-[0.99]" data-purpose="photo-upload-box">
+<!-- Camera Icon Container -->
+<div class="w-12 h-12 rounded-full bg-[#E5F3EE] flex items-center justify-center text-[#00583E] mb-2.5 shadow-sm">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+<circle cx="12" cy="13" r="4"></circle>
+</svg>
+</div>
+<!-- Upload Title -->
+<p class="text-sm font-bold text-slate-800">Ambil Foto Tanaman</p>
+<!-- Upload Subtitle -->
+<p class="text-xs text-slate-400 mt-0.5">atau pilih dari galeri</p>
+</section>
+<!-- END: UploadPhotoSection -->
+<!-- BEGIN: ConditionSelectorSection -->
+<section class="space-y-2.5" data-purpose="condition-picker">
+<h2 class="text-xs font-bold text-slate-800 tracking-tight">Kondisi tanaman saat ini</h2>
+<!-- 3 Emoticon Status Cards -->
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Option 1: Baik (Active default) -->
+<button class="group flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-white border-2 border-emerald-500 shadow-sm transition hover:shadow focus:outline-none" type="button">
+<span class="text-2xl mb-1 group-active:scale-110 transition">😊</span>
+<span class="text-xs font-semibold text-slate-800">Baik</span>
+</button>
+<!-- Option 2: Biasa -->
+<button class="group flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition focus:outline-none" type="button">
+<span class="text-2xl mb-1 group-active:scale-110 transition">😐</span>
+<span class="text-xs font-medium text-slate-600">Biasa</span>
+</button>
+<!-- Option 3: Perlu perhatian -->
+<button class="group flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition focus:outline-none" type="button">
+<span class="text-2xl mb-1 group-active:scale-110 transition">😟</span>
+<span class="text-[11px] font-medium text-slate-600 leading-tight text-center">Perlu perhatian</span>
+</button>
+</div>
+</section>
+<!-- END: ConditionSelectorSection -->
+<!-- BEGIN: NoteInputSection -->
+<section class="space-y-1.5" data-purpose="note-input">
+<label class="sr-only" for="plant-note">Tulis catatan (opsional)</label>
+<textarea class="w-full text-xs placeholder:text-slate-400 bg-white border border-slate-200 rounded-xl p-3 focus:ring-1 focus:ring-[#00583E] focus:border-[#00583E] resize-none outline-none transition" id="plant-note" placeholder="Tulis catatan (opsional)..." rows="4"></textarea>
+</section>
+<!-- END: NoteInputSection -->
+</div>
+<!-- END: MainContentArea -->
+<!-- BEGIN: BottomActionSection -->
+<footer class="p-4 bg-white border-t border-slate-100" data-purpose="bottom-action">
+<button class="w-full py-3 px-4 bg-[#00583E] hover:bg-[#004732] active:bg-[#003828] text-white text-sm font-semibold rounded-xl transition shadow-md flex items-center justify-center active:scale-[0.99]" type="button">
+        Simpan Catatan
+      </button>
+<!-- iOS Home Indicator -->
+<div class="w-32 h-1 bg-slate-300 rounded-full mx-auto mt-4"></div>
+</footer>
+<!-- END: BottomActionSection -->
+</main>
+<!-- END: MobileDeviceFrame -->
+
+
+</body></html>

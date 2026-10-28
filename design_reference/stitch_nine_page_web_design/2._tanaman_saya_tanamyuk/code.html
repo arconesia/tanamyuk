@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>TanamYuk - Tanaman Saya</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Phosphor Icons for UI accents -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    /* Mengunci scrollbar desktop agar nyaman dilihat seperti layar ponsel native */
+    body {
+      background-color: #e5e7eb;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-0 md:p-6 font-sans select-none">
+<!-- BEGIN: PhoneContainer -->
+<!-- Container mensimulasikan layar iPhone iOS modern -->
+<div class="w-full max-w-[393px] h-[852px] bg-slate-50 flex flex-col relative shadow-2xl rounded-none md:rounded-[44px] overflow-hidden border-0 md:border-[8px] md:border-stone-800">
+<!-- BEGIN: iOSStatusBar -->
+<!-- Status bar standar iOS dengan waktu 9:41 dan indikator sinyal/baterai -->
+<div class="w-full pt-3 px-7 pb-2 flex justify-between items-center bg-white z-20 shrink-0 text-slate-800" data-purpose="status-bar">
+<!-- Waktu Status Bar -->
+<span class="text-[15px] font-semibold tracking-tight">9:41</span>
+<!-- Dynamic Island / Notifikasi Placeholder Minimalis -->
+<div class="hidden md:block w-24 h-4 bg-black rounded-full -mt-1 opacity-10"></div>
+<!-- Icon Sinyal, Wifi, dan Baterai -->
+<div class="flex items-center space-x-1.5 text-slate-900">
+<!-- Signal Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 16 12">
+<rect height="3" rx="0.5" width="2.5" x="0" y="9"></rect>
+<rect height="6" rx="0.5" width="2.5" x="4" y="6"></rect>
+<rect height="9" rx="0.5" width="2.5" x="8" y="3"></rect>
+<rect height="12" rx="0.5" width="2.5" x="12" y="0"></rect>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 16 12">
+<path d="M8 2.5C10.7 2.5 13.1 3.6 14.8 5.3L16 4.1C13.9 2 11.1 0.7 8 0.7C4.9 0.7 2.1 2 0 4.1L1.2 5.3C2.9 3.6 5.3 2.5 8 2.5ZM8 6.5C9.7 6.5 11.2 7.2 12.3 8.3L13.5 7.1C12.1 5.7 10.1 4.8 8 4.8C5.9 4.8 3.9 5.7 2.5 7.1L3.7 8.3C4.8 7.2 6.3 6.5 8 6.5ZM8 10.5C8.8 10.5 9.5 11.2 9.5 12C9.5 12.8 8.8 13.5 8 13.5C7.2 13.5 6.5 12.8 6.5 12C6.5 11.2 7.2 10.5 8 10.5Z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-5 h-2.5 border border-slate-900 rounded-[3px] p-[1px] flex items-center">
+<div class="h-full w-full bg-slate-900 rounded-[1.5px]"></div>
+</div>
+</div>
+</div>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: HeaderSection -->
+<!-- Header utama: Judul Tanaman Saya & Tombol Tambah Bundar -->
+<header class="px-5 pt-3 pb-3 bg-white flex items-center justify-between z-10 shrink-0" data-purpose="screen-header">
+<h1 class="text-[22px] font-bold text-slate-800 tracking-tight">Tanaman Saya</h1>
+<!-- Tombol Tambah Cepat Hijau Bulat -->
+<button aria-label="Tambah Tanaman" class="w-9 h-9 rounded-full bg-emerald-600 active:bg-emerald-700 text-white flex items-center justify-center shadow-sm transition transform active:scale-95">
+<svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: MainContentScrollable -->
+<!-- Konten Scrollable: Tab Filter & Daftar List Kartu Budidaya -->
+<main class="flex-1 overflow-y-auto hide-scrollbar px-5 pt-2 pb-6 space-y-4">
+<!-- Tab Segmented Control Filter -->
+<section class="bg-slate-100 p-1 rounded-xl flex items-center" data-purpose="segmented-tab">
+<button class="flex-1 py-1.5 text-[13px] font-semibold rounded-lg bg-emerald-700 text-white shadow-sm transition">
+          Aktif (3)
+        </button>
+<button class="flex-1 py-1.5 text-[13px] font-medium text-slate-500 hover:text-slate-700 transition">
+          Selesai (1)
+        </button>
+</section>
+<!-- Daftar Tanaman Aktif -->
+<section class="space-y-3.5" data-purpose="plant-list">
+<!-- CARD 1: Cabai Rawit #001 -->
+<article class="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] flex items-center gap-3 relative cursor-pointer active:bg-slate-50/80 transition group">
+<!-- Thumbnail Gambar -->
+<div class="w-[84px] h-[84px] rounded-xl overflow-hidden shrink-0 bg-slate-100">
+<img alt="Cabai Rawit Merah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIowLgIES_ug5YYNGRXzDorU_qVuXt1tkL2YPp5yNdFtTxuNgJSe2qbuvAyCH4v8RSDHSG_xtPd9amxaoeN5VClFqPqrRb-aXohSGzVXa8DrbOjG6tweXxVHlKEIB-AjuDYPSTtM_VDc0-x0g9sGgvEKUjPN7MX--Z-MZt7sD0xgOhk9S_ylF7ULR0sENC4wfO1hAq5pFdgxXdfXEs9fTcXJ6j67kBo8mSRfLH3owgSsQncw5gBibcmA"/>
+</div>
+<!-- Informasi Budidaya -->
+<div class="flex-1 min-w-0 pr-4">
+<h2 class="text-[15px] font-bold text-slate-800 truncate">Cabai Rawit #001</h2>
+<p class="text-[11.5px] text-slate-500 mt-0.5 font-medium">Hari ke-38 <span class="text-slate-300 mx-0.5">•</span> Perawatan</p>
+<!-- Progress Bar & Persentase -->
+<div class="flex items-center gap-2 mt-2">
+<div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 38%"></div>
+</div>
+<span class="text-[11px] font-bold text-slate-600 shrink-0">38%</span>
+</div>
+<!-- Meta Data: Jumlah & Target Panen -->
+<div class="flex items-center gap-3.5 mt-2 text-[11px] text-slate-500 font-medium">
+<!-- Icon Tanaman / Daun -->
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span><strong class="font-semibold text-slate-700">47</strong> tanaman</span>
+</div>
+<!-- Icon Kalender -->
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>± 25 hari menuju panen</span>
+</div>
+</div>
+</div>
+<!-- Chevron Navigasi Kanan -->
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+<svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</article>
+<!-- CARD 2: Tomat #001 -->
+<article class="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] flex items-center gap-3 relative cursor-pointer active:bg-slate-50/80 transition group">
+<!-- Thumbnail Gambar -->
+<div class="w-[84px] h-[84px] rounded-xl overflow-hidden shrink-0 bg-slate-100">
+<img alt="Buah Tomat Segar" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtzKjMtqsgmUCho4iIY4wdKXhuGjEyDgiGSudTHYr6ASqNRH7ZbmB6m52hANU2T1Z8hYr7ebVcv6cSKqC577Fl9CUe3gAoeoKWzCi5L-DfVKRJSXAzSFSvfYt1vEqMJZFGC749Pj0O8_V06O3WrxfztZWmownbsPnWYBLpJvLlwIlO7ZnfpEhJ_1S2AlOi-oBXV-7jv9xYWXK9ZCScPVrLQBcevh5cjb7tFVAvKfZTSUytfNHZ5RaUww"/>
+</div>
+<!-- Informasi Budidaya -->
+<div class="flex-1 min-w-0 pr-4">
+<h2 class="text-[15px] font-bold text-slate-800 truncate">Tomat #001</h2>
+<p class="text-[11.5px] text-slate-500 mt-0.5 font-medium">Hari ke-12 <span class="text-slate-300 mx-0.5">•</span> Pertumbuhan</p>
+<!-- Progress Bar & Persentase -->
+<div class="flex items-center gap-2 mt-2">
+<div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 20%"></div>
+</div>
+<span class="text-[11px] font-bold text-slate-600 shrink-0">20%</span>
+</div>
+<!-- Meta Data: Jumlah & Target Panen -->
+<div class="flex items-center gap-3.5 mt-2 text-[11px] text-slate-500 font-medium">
+<!-- Icon Tanaman / Daun -->
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span><strong class="font-semibold text-slate-700">30</strong> tanaman</span>
+</div>
+<!-- Icon Kalender -->
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>± 60 hari menuju panen</span>
+</div>
+</div>
+</div>
+<!-- Chevron Navigasi Kanan -->
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+<svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</article>
+<!-- CARD 3: Pakcoy #001 -->
+<article class="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] flex items-center gap-3 relative cursor-pointer active:bg-slate-50/80 transition group">
+<!-- Thumbnail Gambar -->
+<div class="w-[84px] h-[84px] rounded-xl overflow-hidden shrink-0 bg-slate-100">
+<img alt="Sayur Pakcoy Segar" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJT3euRX4gz7S0O77-U5JvVALhgu3dTi_9miSLVkbF77hl9LvL_cFFWZEeK98yG-OlZ-Bc_MRTWPP_SYfb4DCrete9tLBUEAEQ6B6xx3hcwug9Rk6F5Z2fcnj6YS4EKHX91-iC5x6IAoGX4-7MB341HySGoAculjx-tcdcXdnVYOp5XcpOQ9_9b41hGp5zvIAZiV6ybCa5aCsUuaC_FMxbFkSTJPUt9ztt_8-_6k-H_uNoDb8BMqokJQ"/>
+</div>
+<!-- Informasi Budidaya -->
+<div class="flex-1 min-w-0 pr-4">
+<h2 class="text-[15px] font-bold text-slate-800 truncate">Pakcoy #001</h2>
+<p class="text-[11.5px] text-slate-500 mt-0.5 font-medium">Hari ke-7 <span class="text-slate-300 mx-0.5">•</span> Persemaian</p>
+<!-- Progress Bar & Persentase -->
+<div class="flex items-center gap-2 mt-2">
+<div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 15%"></div>
+</div>
+<span class="text-[11px] font-bold text-slate-600 shrink-0">15%</span>
+</div>
+<!-- Meta Data: Jumlah & Target Panen -->
+<div class="flex items-center gap-3.5 mt-2 text-[11px] text-slate-500 font-medium">
+<!-- Icon Tanaman / Daun -->
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span><strong class="font-semibold text-slate-700">100</strong> Tanaman</span>
+</div>
+<!-- Icon Kalender -->
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>± 45 hari menuju tanam</span>
+</div>
+</div>
+</div>
+<!-- Chevron Navigasi Kanan -->
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+<svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</article>
+</section>
+<!-- Tombol Aksi Utama Bawah -->
+<section class="pt-2" data-purpose="primary-action-button">
+<button class="w-full py-3.5 px-4 bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-2 shadow-sm transition active:scale-[0.99]">
+<svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Mulai Tanaman Baru</span>
+</button>
+</section>
+</main>
+<!-- END: MainContentScrollable -->
+<!-- BEGIN: BottomNavigation -->
+<!-- Navigasi bawah sesuai prototype iOS TanamYuk -->
+<nav class="bg-white border-t border-slate-100 px-6 py-2 pb-5 flex justify-between items-center shrink-0 z-20" data-purpose="bottom-navbar">
+<!-- Beranda Tab -->
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 transition" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium tracking-tight">Beranda</span>
+</a>
+<!-- Tanaman Saya Tab (Aktif) -->
+<a class="flex flex-col items-center gap-1 text-emerald-700 transition font-semibold" href="#">
+<svg class="w-5 h-5 text-emerald-700 fill-emerald-700/10" fill="currentColor" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] tracking-tight">Tanaman Saya</span>
+</a>
+<!-- Tantangan Tab -->
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 transition" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-.871a2.625 2.625 0 00-2.625-2.625H12a2.625 2.625 0 00-2.625 2.625h-.871c-.621 0-1.125.504-1.125 1.125V18.75" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 3a6 6 0 00-6 6c0 2.5 1.5 4.5 3 5.5h6c1.5-1 3-3 3-5.5a6 6 0 00-6-6z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium tracking-tight">Tantangan</span>
+</a>
+<!-- Profil Tab -->
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 transition" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-medium tracking-tight">Profil</span>
+</a>
+</nav>
+<!-- END: BottomNavigation -->
+<!-- BEGIN: iOSHomeIndicator -->
+<!-- Garis Home Bar khas Apple iPhone -->
+<div class="w-full pb-2 bg-white flex justify-center shrink-0">
+<div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+</div>
+<!-- END: iOSHomeIndicator -->
+</div>
+<!-- END: PhoneContainer -->
+</body></html>
